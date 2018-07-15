@@ -1,0 +1,45 @@
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', posts_path %>
+
+<div class=" flex justify-center items-center">
+  <div class="w-full md:w-1/2 card bg-white card flex justify-center items-center">
+    <div class="flex flex-wrap justify-center items-center p-8">
+      <div class="leading-normal text-center">
+        <p class="text-3xl"><%= @user.first_name %></p>
+        <p class="text-3xl"><%= @user.last_name %></p>
+        <p class="text-3xl" style="color:#b4cfd1"><%= @user.email %></p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Posts of user -->
+  <h2 class="text-xl mb-4 "><%= @user.posts.count %> Articles</h2>
+    <%- @user.posts.each do |post| %>
+        <div class="bg-white mt-8 mb-8 flex card flex justify-center items-center overflow-hidden">
+          <div class="flex-2 p-10">
+            <ul class="list-reset mb-2">
+              <li class="inline-block">
+
+              </li>
+              <li class="inline-block">
+                <%= link_to edit_post_path(post) do %>
+                    <i class="far fa-edit fa-lg green"></i>
+                <% end %>
+
+              </li>
+              <li class="inline-block"><%= link_to post, method: :delete, data: { confirm: 'Are you sure?' } do %><i class="far fa-trash-alt fa-lg green"></i><% end %></li>
+            </ul>
+            <%= link_to post, :class => 'no-underline' do %>
+                <h4 class="grey f-w4"><%= post.post_author %></h4>
+                <div class="flex items-baseline justify-between">
+                  <h1 class="title inline-block text-black post-title trs"><%= post.post_title %></h1>
+                  <h4 class="inline-block float-right grey f-w4"><%= post.date_of_publication %></h4>
+                </div>
+            <% end %>
+            <h3 class="header"><%= truncate(post.post_header, :length => 200,  :separator => ' ') %></h3>
+          </div>
+          <div class="flex-1 flex justify-center items-center">
+            <img class="" src="<%= post.post_file %>">
+          </div>
+    <% end %>
+</div>

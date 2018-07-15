@@ -65,4 +65,8 @@ gem 'carrierwave'
 
 gem 'mini_magick'
 
+gem 'devise'
+
 gem 'faker'
+
+gem 'kaminari'

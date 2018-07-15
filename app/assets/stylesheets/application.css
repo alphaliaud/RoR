@@ -13,3 +13,175 @@
  *= require_tree .
  *= require_self
  */
+
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700i,900,900i');
+@import url('https://fonts.googleapis.com/css?family=Archivo+Narrow:400,600');
+
+.general-title{
+    font-size: 100px;
+}
+body{
+    font-family: 'Hind Siliguri', sans-serif;
+    background-color: #f4f4f4;
+}
+
+.card{
+    border-radius: 2px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+    height: 255px;
+}
+
+.flex-2{
+    flex: 2;
+}
+
+.header{
+    font-weight: 100;
+    margin-top: 20px;
+}
+
+.title{
+
+}
+
+.orange{
+    color:#F76B1C;
+}
+
+.green{
+    color:#b4cfd1;
+}
+
+.b-green{
+    border-color:#b4cfd1;
+}
+
+.grey{
+    color:#d9d9d9;
+}
+
+.f-w4{
+    font-weight: 400;
+}
+
+.trs{
+    transition: 0.3s all;
+}
+
+.h-grey:hover{
+    color:#d9d9d9;
+}
+
+
+.post-title:hover{
+    color:#b4cfd1;
+}
+
+.no-underline a{
+    text-decoration: none;
+    color:#a0a0a0;
+
+}
+
+.page, .first, .prev, .next, .last, .current{
+    padding: 2px 2px;
+    margin: 0 2px;
+}
+
+.current{
+    padding: 5px 10px;
+    color: #b4cfd1;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.btn-color{
+    background-color: #b4cfd1;
+}
+
+.btn-color:hover{
+    background-color: #ccd6d6;
+}
+
+.border-grey:hover{
+    border: 3px solid #ccd6d6;
+}
+
+.divider{
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #F0F0F0;
+    line-height: 0.00001em;
+    margin: 40px 0;
+}
+
+.divider span {
+    background: #fff;
+    padding: 0 10px;
+    color: #D5D5D5;
+    font-size: 13px;
+}
+
+/* dopdown */
+.dropbtn {
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    transition: 0.5s all;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a{
+    transition: 0.5s all;
+}
+
+.dropdown-content a:hover {
+    transform: translateX(3px);
+    cursor: pointer;
+}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.show-title{
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    margin-bottom:40px;
+    margin-top:40px;
+}
+
+.show-header{
+    font-family: 'Archivo Narrow', sans-serif;
+    font-size: 20px;
+    color:#3D4852;
+    margin: 40px 0;
+}
+
+.show-id{
+    padding: 20px 0;
+    border-bottom: 1px solid #DAE1E7;
+}
+
+.show_id p{
+    font-family: 'Playfair Display', serif;
+}

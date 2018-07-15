@@ -1,0 +1,58 @@
+<p id="notice"><%= notice %></p>
+<div class="bg-white border-b-4 b-green">
+  <div class="mr-auto ml-auto w-2/3 flex justify-center items-center pt-24 pb-6">
+    <% if user_signed_in? %>
+        <%= link_to 'New Post', new_post_path(), :class => "flex flex-1 justify-start items-center bg-custom-blur text-black font-black no-underline h-grey trs" %>
+        <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+        <%= link_to('Personal Posts', user_path(@user)) %>
+    <% else %>
+        <div class="dropdown">
+          <i class="far fa-user fa-md dropbtn"></i>
+          <div class="dropdown-content">
+            <%= link_to 'Sign up', new_user_path(), :class => "flex flex-1 justify-start items-center bg-custom-blur text-black font-black no-underline h-grey trs" %>
+            <%= link_to 'Sign in', new_user_session_path(), :class => "flex flex-1 justify-end items-center bg-custom-blur text-black font-black no-underline h-grey trs" %>
+          </div>
+        </div>
+    <% end %>
+  </div>
+</div>
+
+<section class=" mr-auto ml-auto w-2/3">
+
+  <% @posts.each do |post| %>
+        <div class="bg-white mt-8 mb-8 flex card flex justify-center items-center overflow-hidden">
+          <div class="flex-2 p-10">
+            <ul class="list-reset mb-2">
+              <li class="inline-block">
+
+                    </li>
+              <li class="inline-block">
+                <%= link_to edit_post_path(post) do %>
+                    <i class="far fa-edit fa-lg green"></i>
+                <% end %>
+
+              </li>
+              <li class="inline-block"><%= link_to post, method: :delete, data: { confirm: 'Are you sure?' } do %><i class="far fa-trash-alt fa-lg green"></i><% end %></li>
+            </ul>
+            <%= link_to post, :class => 'no-underline' do %>
+              <h4 class="grey f-w4"><%= post.post_author %></h4>
+              <div class="flex items-baseline justify-between">
+                <h1 class="title inline-block text-black post-title trs"><%= post.post_title %></h1>
+                <h4 class="inline-block float-right grey f-w4"><%= post.date_of_publication %></h4>
+              </div>
+            <% end %>
+            <h3 class="header"><%= truncate(post.post_header, :length => 200,  :separator => ' ') %></h3>
+          </div>
+          <div class="flex-1 flex justify-center items-center">
+            <img class="" src="<%= post.post_file %>">
+          </div>
+
+        </div>
+    <% end %>
+
+  <br>
+
+  <%= paginate @posts %>
+
+</section>
+

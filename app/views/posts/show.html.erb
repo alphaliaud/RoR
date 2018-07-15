@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>
+
+<div class="mr-auto ml-auto w-2/3 pt-24 pb-6">
+
+  <img src="<%= @post.post_file %>">
+
+  <p class="show-title"><%= @post.post_title %></p>
+
+  <div class="show-id flex justify-between items-center">
+  <p class="font-semibold text-grey"><%= @post.post_author %></p>
+  <p class="font-semibold text-grey"><%= @post.date_of_publication %></p>
+</div>
+
+  <p class="show-header"><%= @post.post_header %></p>
+
+  <div class="border-solid border-grey-light border-t pt-16">
+    <p class="rounded-full p-5 bg-white rounded-tl-sm"><%= @post.post_comment %></p>
+  </div>
+
+</div>
